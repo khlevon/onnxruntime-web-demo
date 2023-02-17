@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <header>
+    <h1>ML/AI models in JavaScript environment</h1>
+  </header>
+  <section id="settings-container">
+    <form id="settings-form">
+      <div class="row">
+        <fieldset>
+          <label>Model</label>
+          <select name="model">
+            <option value="mosaic" selected>Mosaic</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label>Mode</label>
+          <select name="mode">
+            <option value="snapshot" selected>Snapshot from Live Camera</option>
+            <option value="live">Live Camera</option>
+            <option value="live_worker">Live Camera (worker inference)</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label>Backend</label>
+          <select name="backend">
+            <option value="wasm" selected>WASM</option>
+            <option value="webgl">WEBGL</option>
+          </select>
+        </fieldset>
+
+      </div>
+      <input type="submit" value="Setup" />
+    </form>
+  </section>
+  <section id="root">
+  </section>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

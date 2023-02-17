@@ -1,0 +1,144 @@
+html,
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+header {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+
+  h1 {
+    display: block;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+  }
+}
+
+#settings-container {
+  display: block;
+  width: 850px;
+  margin: 0 auto;
+  padding: 0 20px;
+  object-fit: cover;
+
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+
+    .row {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    fieldset {
+      all: unset;
+      display: flex;
+      min-width: 20%;
+      flex-direction: column;
+
+      label {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        text-align: left;
+        font-size: 1.3em;
+        font-weight: 400;
+      }
+
+      select {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        font-size: 1.3em;
+        font-weight: 600;
+      }
+    }
+
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      margin: 20px 0;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+  }
+}
+
+#root {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: 80px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .indicator {
+    display: block;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+  }
+
+  .main-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 30px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .snapshot-button {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+
+    cursor: pointer;
+  }
+
+  video,
+  canvas {
+    transform: scaleX(-1); // Flip the image
+
+    display: block;
+    width: 500px;
+    min-height: 500px;
+    object-fit: cover;
+
+    background-image: url("./artifacts/no_video.png");
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  }
+}
