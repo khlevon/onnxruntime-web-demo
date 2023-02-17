@@ -7,6 +7,7 @@
 ### Required technologies:
 
 [NodeJS 16.x](https://nodejs.org/en/download/)
+
 [yarn 1.22.x](https://classic.yarnpkg.com/lang/en/docs/install)
 
 

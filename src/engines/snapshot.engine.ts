@@ -73,11 +73,13 @@ const snapshotEngineFactory = (): Engine => {
         // Convert image to tensor
         // Get image Uint8ClampedArray data
         const imageData = imageToData(resizedImage);
+        // [r,g,b,a, r,g,b,a] -> shape = [224 * 224 * 3]
 
         const startProcessing = Date.now();
 
         // Preprocess data
         const processedImageData = preprocessData(imageData, imageSize);
+        // [r,r g,g, b,b] -> shape = [224 * 224 * 3]
 
         // Create tensor
         const colorsChannelsCount = 3;
@@ -87,6 +89,7 @@ const snapshotEngineFactory = (): Engine => {
           imageSize,
           imageSize,
         ]);
+        // shape = [1, 3, 224, 224]
 
         // Run inference
         const outputMap = await inferenceSession.run({
@@ -94,12 +97,15 @@ const snapshotEngineFactory = (): Engine => {
         });
         // Get output tensor
         const { [inferenceSession.outputNames[0]]: outputTensor } = outputMap;
+        // shape = [1, 3, 224, 224]
+
         // Convert output tensor to image
         // Postprocess data
         const processedData = postprocessData(
           outputTensor.data as Float32Array,
           imageSize
         );
+        // shape = [224 * 224 * 3]
 
         indicator.innerHTML = `${Date.now() - startProcessing}ms`;
 
